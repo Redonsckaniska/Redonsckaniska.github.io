@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<center>
+<body style="background-color: #656966">
+  <div style="padding: 60px; font-size: 30px; font-family: monospace">EARTH TO ZUNYYE YEARS CALCULATOR</div>
+  
+  <table>
+   <tr>
+    <td><img src="https://static.wikia.nocookie.net/zunyye/images/e/e6/Site-logo.png" style="width: 30px; padding: 15px"> </td>
+    <td><img src="https://imgs.search.brave.com/kN3aya52L55d4zO16bhXTc1QfAAdJp_85XBWeAsK_uE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvZWFydGgvZWFy/dGhfUE5HOS5wbmc" style="width: 40px; padding: 10px"></td>
+   </tr>
+  </table>
+  
+  <label>Earth Year: 
+    <input type="number" id="userInput" placeholder="e.g. 1968">
+  </label>
+
+  <p>Zunyyean Year: <span id="resultOutput">0</span></p>
+
+  <script>
+    const inputField = document.getElementById('userInput');
+    const outputField = document.getElementById('resultOutput');
+
+    const DIVISOR = 416.6 / 365.5;
+
+    function calculate() {
+      const val = inputField.valueAsNumber || 0;
+   
+      const result = val / DIVISOR;
+      
+      outputField.textContent = result.toFixed(2);
+    }
+
+    inputField.addEventListener('input', calculate);
+  </script>
+
+</body>
+</html>   
